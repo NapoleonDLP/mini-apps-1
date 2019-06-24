@@ -10,6 +10,7 @@ var squares = document.querySelectorAll('td');
 
 // document.getElementById("square").addEventListener("click", play(e))
 //create js version of board in index
+var message = document.getElementById('message_box');
 
 var board = [
   [null, null, null],
@@ -65,7 +66,7 @@ var play = (box) => {
 
 
       if (checkBoard(winningRows)) {
-        console.log('WINNNNAH')
+        message.innerHTML = 'WINNNNAH';
         winner = true;
         setTimeout(resetBoard, 5000)
       }
@@ -112,6 +113,7 @@ var resetBoard = () => {
   }
 
   winner = false;
+  message.innerHTML = '';
 };
 
 /*
@@ -120,7 +122,7 @@ TODO
 
 [ X ] ensure squares can only be play once
 
-[ ] stop game if there is a winner
+[ X ] stop game if there is a winner
 
 [ ] Allert who the winner is
 
