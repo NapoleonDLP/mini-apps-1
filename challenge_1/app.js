@@ -7,9 +7,9 @@ E:
 
 //create js version of board in index
 var board = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
 ];
 
 var winningRows = {
@@ -23,7 +23,27 @@ var winningRows = {
   minorDiag: [board[2][0], board[1][1], board[0][2]]
 }
 
-console.log(document.getElementById("r2c2"))
+// console.log(document.getElementById("r2c2").id)
+var piece = "X";
 
 //create functionality that manipulates the board
+var play = function() {
 
+}
+
+
+//create function that checks an array of three to see if there is a match
+var checkWin = function(group) {
+  console.log(group)
+  return group[0] === group[1] && group[1] === group[2];
+};
+//create a function that checks the whole board for a win
+var checkBaoard = function(wholeBoard) {
+  console.log(winningRows)
+  for (var group in wholeBoard) {
+    if (checkWin(wholeBoard[group])) {
+      return true;
+    }
+  }
+  return false;
+}
