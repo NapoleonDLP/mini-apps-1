@@ -31,6 +31,7 @@ var winningRows = {
 // console.log(document.getElementById("r2c2").id)
 var nextPiece = "X";
 var playCount = 0;
+var winner = false;
 
 //iterate through the list of squares
 for (var i = 0; i < squares.length; i++) {
@@ -42,26 +43,35 @@ for (var i = 0; i < squares.length; i++) {
 var play = (box) => {
   let row = box.target.id[1];
   let col = box.target.id[3];
-  box.target.innerHTML = nextPiece;
-  board[row -1][col-1] = nextPiece;
-  nextPiece === "O" ? nextPiece = "X" : nextPiece = "O";
-  playCount++;
+  //checkk to make sure box is only used once
+  if (!winner) {
+    if (box.target.innerHTML === '') {
+      box.target.innerHTML = nextPiece;
+      board[row -1][col-1] = nextPiece;
+      nextPiece === "O" ? nextPiece = "X" : nextPiece = "O";
+      playCount++;
 
 
-  winningRows = {
-    row1: [board[0][0], board[0][1], board[0][2]],
-    row2: [board[1][0], board[1][1], board[1][2]],
-    row3: [board[2][0], board[2][1], board[2][2]],
-    col1: [board[0][0], board[1][0], board[2][0]],
-    col2: [board[0][1], board[1][1], board[2][1]],
-    col3: [board[0][2], board[1][2], board[2][2]],
-    majorDiag: [board[0][0], board[1][1], board[2][2]],
-    minorDiag: [board[2][0], board[1][1], board[0][2]]
-  }
+      winningRows = {
+        row1: [board[0][0], board[0][1], board[0][2]],
+        row2: [board[1][0], board[1][1], board[1][2]],
+        row3: [board[2][0], board[2][1], board[2][2]],
+        col1: [board[0][0], board[1][0], board[2][0]],
+        col2: [board[0][1], board[1][1], board[2][1]],
+        col3: [board[0][2], board[1][2], board[2][2]],
+        majorDiag: [board[0][0], board[1][1], board[2][2]],
+        minorDiag: [board[2][0], board[1][1], board[0][2]]
+      }
 
 
-  if (checkBoard(winningRows)) {
-    console.log('WINNNNAH')
+      if (checkBoard(winningRows)) {
+        console.log('WINNNNAH')
+        winner = true;
+        setTimeout(resetBoard, 5000)
+      }
+    } else {
+      console.log('THIS BOX IS TAKEN N00B')
+    }
   }
 }
 
@@ -78,3 +88,46 @@ var checkBoard = function(wholeBoard) {
   }
   return false;
 }
+
+var resetBoard = () => {
+  board = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null],
+  ];
+
+  winningRows = {
+    row1: [board[0][0], board[0][1], board[0][2]],
+    row2: [board[1][0], board[1][1], board[1][2]],
+    row3: [board[2][0], board[2][1], board[2][2]],
+    col1: [board[0][0], board[1][0], board[2][0]],
+    col2: [board[0][1], board[1][1], board[2][1]],
+    col3: [board[0][2], board[1][2], board[2][2]],
+    majorDiag: [board[0][0], board[1][1], board[2][2]],
+    minorDiag: [board[2][0], board[1][1], board[0][2]]
+  };
+
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].innerHTML = '';
+  }
+
+  winner = false;
+};
+
+/*
+
+TODO
+
+[ X ] ensure squares can only be play once
+
+[ ] stop game if there is a winner
+
+[ ] Allert who the winner is
+
+[ ] add button to reset the game
+
+[ ] alert if there is a tie
+
+[ ] add message box/next move
+
+*/
