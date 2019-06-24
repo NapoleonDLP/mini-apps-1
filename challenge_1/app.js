@@ -5,7 +5,12 @@ C: no jquery only native dom stuff, no libraries
 E:
 */
 
+
+var squares = document.querySelectorAll('td');
+
+// document.getElementById("square").addEventListener("click", play(e))
 //create js version of board in index
+
 var board = [
   [null, null, null],
   [null, null, null],
@@ -24,22 +29,48 @@ var winningRows = {
 }
 
 // console.log(document.getElementById("r2c2").id)
-var piece = "X";
+var nextPiece = "X";
+var playCount = 0;
 
-//create functionality that manipulates the board
-var play = function() {
-
+//iterate through the list of squares
+for (var i = 0; i < squares.length; i++) {
+  var square = squares[i];
+  //adds an eventListener to each square
+  square.addEventListener("click", (e) => play(e));
 }
 
+var play = (box) => {
+  let row = box.target.id[1];
+  let col = box.target.id[3];
+  box.target.innerHTML = nextPiece;
+  board[row -1][col-1] = nextPiece;
+  nextPiece === "O" ? nextPiece = "X" : nextPiece = "O";
+  playCount++;
+
+
+  winningRows = {
+    row1: [board[0][0], board[0][1], board[0][2]],
+    row2: [board[1][0], board[1][1], board[1][2]],
+    row3: [board[2][0], board[2][1], board[2][2]],
+    col1: [board[0][0], board[1][0], board[2][0]],
+    col2: [board[0][1], board[1][1], board[2][1]],
+    col3: [board[0][2], board[1][2], board[2][2]],
+    majorDiag: [board[0][0], board[1][1], board[2][2]],
+    minorDiag: [board[2][0], board[1][1], board[0][2]]
+  }
+
+
+  if (checkBoard(winningRows)) {
+    console.log('WINNNNAH')
+  }
+}
 
 //create function that checks an array of three to see if there is a match
 var checkWin = function(group) {
-  console.log(group)
-  return group[0] === group[1] && group[1] === group[2];
+  return group[0] !== null && group[0] === group[1] && group[1] === group[2];
 };
 //create a function that checks the whole board for a win
-var checkBaoard = function(wholeBoard) {
-  console.log(winningRows)
+var checkBoard = function(wholeBoard) {
   for (var group in wholeBoard) {
     if (checkWin(wholeBoard[group])) {
       return true;
