@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/report', (req, res) => {
+  console.log('POST WAS MADE: ', req.body);
   res.send('posted');
 });
 
