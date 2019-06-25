@@ -71,11 +71,10 @@ var play = (box) => {
 
         message.innerHTML = `WINNNNAH! ${previousPiece} WINS!!`;
         winner = true;
-        setTimeout(resetBoard, 5000)
-      }
-
-      if (playCount === 9) {
+        // setTimeout(resetBoard, 5000)
+      } else if (playCount === 9) {
         message.innerHTML = 'If you aint first you last Ricky Boobie! Tied game!';
+        // resetBoard();
       }
     } else {
       message.innerHTML = 'THIS BOX IS TAKEN N00B TRY AGAIN';
@@ -125,6 +124,8 @@ var resetBoard = () => {
   nextPiece = "X";
 };
 
+document.getElementById("reset_button").addEventListener("click", resetBoard);
+
 /*
 
 TODO
@@ -137,7 +138,7 @@ TODO
 
 [ ] add button to reset the game
 
-[ ] alert if there is a tie
+[ X ] alert if there is a tie
 
 [ X ] add message box/next move
 
