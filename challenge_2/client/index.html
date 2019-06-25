@@ -6,11 +6,12 @@
   </head>
 
   <body>
-    <form>
+    <form method="POST" action="http://127.0.0.1:3000/api/report" id="report_form">
       Report:
-      <input type="text" name="Report">
-      <input type="submit" name="Send Report">
+      <input type="text" name="report" id="report_text">
+      <input type="submit" name="Submit" id="report_submit">
     </form>
+    <script src="app.js"></script>
   </body>
 
 </html>
