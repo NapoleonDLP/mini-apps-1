@@ -42,6 +42,7 @@ for (var i = 0; i < squares.length; i++) {
 }
 
 var play = (box) => {
+  let previousPiece = nextPiece;
   let row = box.target.id[1];
   let col = box.target.id[3];
   //checkk to make sure box is only used once
@@ -66,12 +67,13 @@ var play = (box) => {
 
 
       if (checkBoard(winningRows)) {
-        message.innerHTML = 'WINNNNAH';
+
+        message.innerHTML = `WINNNNAH! ${previousPiece} WINS!!`;
         winner = true;
         setTimeout(resetBoard, 5000)
       }
     } else {
-      console.log('THIS BOX IS TAKEN N00B')
+      message.innerHTML = 'THIS BOX IS TAKEN N00B TRY AGAIN';
     }
   }
 }
@@ -114,6 +116,7 @@ var resetBoard = () => {
 
   winner = false;
   message.innerHTML = '';
+  nextPiece = "X";
 };
 
 /*
