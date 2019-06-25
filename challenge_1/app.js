@@ -65,6 +65,7 @@ var play = (box) => {
         minorDiag: [board[2][0], board[1][1], board[0][2]]
       }
 
+    message.innerHTML = `${nextPiece}'s turn`;
 
       if (checkBoard(winningRows)) {
 
@@ -127,12 +128,12 @@ TODO
 
 [ X ] stop game if there is a winner
 
-[ ] Allert who the winner is
+[ X ] Allert who the winner is
 
 [ ] add button to reset the game
 
 [ ] alert if there is a tie
 
-[ ] add message box/next move
+[ X ] add message box/next move
 
 */
