@@ -19,14 +19,14 @@ var board = [
 ];
 
 var winningRows = {
-  row1: [board[0][0], board[0][1], board[0][2]],
-  row2: [board[1][0], board[1][1], board[1][2]],
-  row3: [board[2][0], board[2][1], board[2][2]],
-  col1: [board[0][0], board[1][0], board[2][0]],
-  col2: [board[0][1], board[1][1], board[2][1]],
-  col3: [board[0][2], board[1][2], board[2][2]],
-  majorDiag: [board[0][0], board[1][1], board[2][2]],
-  minorDiag: [board[2][0], board[1][1], board[0][2]]
+  // row1: [board[0][0], board[0][1], board[0][2]],
+  // row2: [board[1][0], board[1][1], board[1][2]],
+  // row3: [board[2][0], board[2][1], board[2][2]],
+  // col1: [board[0][0], board[1][0], board[2][0]],
+  // col2: [board[0][1], board[1][1], board[2][1]],
+  // col3: [board[0][2], board[1][2], board[2][2]],
+  // majorDiag: [board[0][0], board[1][1], board[2][2]],
+  // minorDiag: [board[2][0], board[1][1], board[0][2]]
 }
 
 // console.log(document.getElementById("r2c2").id)
@@ -136,7 +136,7 @@ TODO
 
 [ X ] Allert who the winner is
 
-[ ] add button to reset the game
+[ X ] add button to reset the game
 
 [ X ] alert if there is a tie
 
