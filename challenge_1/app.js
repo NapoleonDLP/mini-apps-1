@@ -73,6 +73,10 @@ var play = (box) => {
         winner = true;
         setTimeout(resetBoard, 5000)
       }
+
+      if (playCount === 9) {
+        message.innerHTML = 'If you aint first you last Ricky Boobie! Tied game!';
+      }
     } else {
       message.innerHTML = 'THIS BOX IS TAKEN N00B TRY AGAIN';
     }
@@ -115,6 +119,7 @@ var resetBoard = () => {
     squares[i].innerHTML = '';
   }
 
+  playCount = 0;
   winner = false;
   message.innerHTML = '';
   nextPiece = "X";
