@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
   res.send('Hello world!');
 });
 
+// eslint-disable-next-line no-unused-vars
 app.post('/api/report', (req, res) => {
   showReport();
   console.log('POST WAS MADE: ', req.body.report);

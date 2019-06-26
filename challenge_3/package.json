@@ -1,0 +1,26 @@
+{
+  "name": "challenge_3",
+  "version": "1.0.0",
+  "description": "Multistep Checkout Experience",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NapoleonDLP/hrr39-mini-apps-1.git"
+  },
+  "keywords": [
+    "narwhal"
+  ],
+  "author": "HR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NapoleonDLP/hrr39-mini-apps-1/issues"
+  },
+  "homepage": "https://github.com/NapoleonDLP/hrr39-mini-apps-1#readme",
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0"
+  }
+}
