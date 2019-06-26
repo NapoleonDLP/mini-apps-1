@@ -2,6 +2,8 @@
 // import express
 const express = require('express');
 const bodyParser = require('body-parser');
+const showReport = require('./client/app.js');
+// const csvReport = require('./samples/csv_report.csv');
 // const serveStatic = require('serve-static');
 // const path = require('path');
 
@@ -12,11 +14,11 @@ const app = express();
 const port = 3000;
 
 // install middleware
-app.use(bodyParser.urlencoded({ extend: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(serveStatic('client/index.html'));
 
-app.use(express.static('client'));
+app.use(express.static('client')); // serves index html
 app.use(bodyParser.json());
 
 // build routes
@@ -26,8 +28,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/report', (req, res) => {
-  console.log('POST WAS MADE: ', req.body);
-  res.send(req.body);
+  showReport();
+  console.log('POST WAS MADE: ', req.body.report);
+  // res.send();
 });
 
 // log what port it is listening to
