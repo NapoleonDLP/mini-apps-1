@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 
 //install middleware
+app.use(express.static("public"));
 
 //build routes
 
