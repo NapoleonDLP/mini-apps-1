@@ -1,0 +1,24 @@
+{
+  "name": "challenge_4",
+  "version": "1.0.0",
+  "description": "Connect Four",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NapoleonDLP/hrr39-mini-apps-1.git"
+  },
+  "author": "NAAHH POHH LEEOOHN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NapoleonDLP/hrr39-mini-apps-1/issues"
+  },
+  "homepage": "https://github.com/NapoleonDLP/hrr39-mini-apps-1#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
