@@ -6,7 +6,7 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-app.use(express.static('public'));
+app.use(express.static('./client/dist'));
 //serving static file defaults to '/' endpoint
 // app.get('/', (req, res) => {} // in this case app.get with a
 // '/' never executes gets requested because that get request is
