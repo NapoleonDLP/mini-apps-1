@@ -29,6 +29,8 @@ app.post('/submit', (req, res) => {
 //app.listen
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+
+////sample schema
 // {
 // "name": "Napoleon",
 // "email": "naps@hotmail.com",
