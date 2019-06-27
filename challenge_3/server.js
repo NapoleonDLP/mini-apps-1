@@ -10,7 +10,7 @@ const port = 3000;
 //install middleware
 // app.use()
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
@@ -21,8 +21,9 @@ app.get('/users', (req, res) => {
 });
 
 app.post('/submit', (req, res) => {
+  // console.log(req.body)
   var newCustomer = new Customer(req.body);
-  //.save() is a method used in mongo
+  //// .save() is a method used in mongo
   newCustomer.save();
   res.send(200);
 });
