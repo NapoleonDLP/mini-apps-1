@@ -13,13 +13,11 @@ app.use(express.static('public'));
 // handled at the status
 
 app.get('/api', (req, res) => {
-  console.log('GETTIN');
-  res.send('Yup');
+  res.send();
 });
 
 app.post('/api', (req, res, next) => {
-  console.log('posted on the monster block');
-  res.end('posted on the monster block');
+  res.end();
 });
 
 app.listen(port, () => console.log(`listening on port ${port}`));
