@@ -14,10 +14,7 @@ var customerSchema = new Schema({ //this is another way
   name: String,
   email: String,
   password: String,
-  address: {
-    line1: String,
-    line2: String,
-  },
+  address: String,
   city: String,
   state: String,
   zipCode: Number,
