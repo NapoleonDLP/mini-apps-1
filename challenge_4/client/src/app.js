@@ -93,3 +93,8 @@ var resetBoard = function(board) {
   return board;
 }
 
+export default {
+  board, resetBoard,
+  play,
+  checkWinner
+}
