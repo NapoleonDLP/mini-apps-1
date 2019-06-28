@@ -18,10 +18,10 @@ class Board extends React.Component {
 
   render() {
     return (
-      <div id="board">
-        <div>
-          {this.state.board.map((row) => <Rows row={row} />)}
-        </div>
+      <div class="board">
+          {this.state.board.map((row) =>
+              <Rows row={row} />
+            )}
       </div>
     )
   }
