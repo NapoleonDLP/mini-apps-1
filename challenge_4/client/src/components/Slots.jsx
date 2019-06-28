@@ -1,21 +1,14 @@
 import React from 'react';
 
-class Slots extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+var Slots = (props) => {
 
-    }
-  }
-
-  render () {
-
-    return (
-      <div id="slot">
-        <h1>YUS</h1>
+  return (
+    <div class="square">
+      <div class="slot">
+        {props.slot}
       </div>
+    </div>
     )
-  }
 }
 
 export default Slots;
